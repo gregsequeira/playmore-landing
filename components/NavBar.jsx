@@ -3,11 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import WaitlistModal from './WaitlistModal';
-import TeamModal from './TeamModal';
 
 export default function NavBar() {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
-  const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Add scroll event listener to handle navbar background
@@ -37,15 +35,7 @@ export default function NavBar() {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={() => setIsTeamModalOpen(true)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-                isScrolled ? 'text-gray-900 hover:text-gray-700' : 'text-white hover:text-gray-200'
-              }`}
-            >
-              Meet the Team
-            </button>
+          <div className="hidden md:flex items-center">
             <button
               onClick={() => setIsWaitlistModalOpen(true)}
               className="bg-gray-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -55,15 +45,7 @@ export default function NavBar() {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-2">
-            <button
-              onClick={() => setIsTeamModalOpen(true)}
-              className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-                isScrolled ? 'text-gray-900 hover:text-gray-700' : 'text-white hover:text-gray-200'
-              }`}
-            >
-              Meet the Team
-            </button>
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsWaitlistModalOpen(true)}
               className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -74,14 +56,10 @@ export default function NavBar() {
         </div>
       </div>
 
-      {/* Modals */}
+      {/* Modal */}
       <WaitlistModal
         isOpen={isWaitlistModalOpen}
         onClose={() => setIsWaitlistModalOpen(false)}
-      />
-      <TeamModal
-        isOpen={isTeamModalOpen}
-        onClose={() => setIsTeamModalOpen(false)}
       />
     </nav>
   );
