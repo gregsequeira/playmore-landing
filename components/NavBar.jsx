@@ -53,8 +53,16 @@ export default function NavBar() {
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu buttons */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={() => setIsTeamModalOpen(true)}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
+                isScrolled ? 'text-gray-900 hover:text-gray-700' : 'text-white hover:text-gray-200'
+              }`}
+            >
+              Meet the Team
+            </button>
             <button
               onClick={() => setIsWaitlistModalOpen(true)}
               className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
