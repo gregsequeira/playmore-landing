@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react';
+import Link from 'next/link';
 import WaitlistModal from './WaitlistModal';
 import TeamModal from './TeamModal';
 
@@ -25,7 +25,7 @@ export default function NavBar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center group">
-              <div className={`w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300 ${
+              <div className={`w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300 ${
                 isScrolled ? 'shadow-md' : ''
               }`}>
                 <span className="text-white font-bold text-2xl">PM</span>
@@ -39,7 +39,7 @@ export default function NavBar() {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={() => setIsTeamModalOpen(true)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                 isScrolled ? 'text-gray-900 hover:text-gray-700' : 'text-white hover:text-gray-200'
               }`}
             >
@@ -47,7 +47,7 @@ export default function NavBar() {
             </button>
             <button
               onClick={() => setIsWaitlistModalOpen(true)}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-gray-900 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Join Waitlist
             </button>
@@ -57,7 +57,7 @@ export default function NavBar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsWaitlistModalOpen(true)}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-blue-700 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Join Waitlist
             </button>
