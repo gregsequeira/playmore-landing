@@ -36,6 +36,7 @@ export default function NavBar() {
             </Link>
           </div>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={() => setIsTeamModalOpen(true)}
@@ -53,7 +54,7 @@ export default function NavBar() {
             </button>
           </div>
 
-          {/* Mobile menu buttons */}
+          {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={() => setIsTeamModalOpen(true)}
